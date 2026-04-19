@@ -13,8 +13,8 @@ Resources:
   BackendLambdaFunction:
     Type: AWS::Serverless::Function
     Properties:
-      FunctionName: template-backend-fastapi
-      Handler: main.lambda_handler
+      FunctionName: test-backend-fastapi
+      Handler: app.main.lambda_handler
       CodeUri: .
       Policies:
         - AWSLambdaBasicExecutionRole
