@@ -1,0 +1,35 @@
+# Node.js
+node_modules/
+dist/
+.vite/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+.pytest_cache/
+
+# AWS SAM
+.aws-sam/
+
+# Test artifacts
+coverage/
+playwright-report/
+test-results/
+blob-report/
+
+# IDE
+.idea/
+.vscode/*
+!.vscode/extensions.json
+
+# OS
+.DS_Store
+
+# Environment
+.env
+.env.*
+
+# Docker
+docker-compose.override.yml

@@ -1,0 +1,9 @@
+app:
+  name: webapp
+  stage: dev
+
+params:
+  supabase_url: /webapp/dev/supabase-url
+  supabase_anon_key: /webapp/dev/supabase-anon-key
+  supabase_service_role_key: /webapp/dev/supabase-service-role-key
+  lambda_function_url: /webapp/dev/lambda-function-url
