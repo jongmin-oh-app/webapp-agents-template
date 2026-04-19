@@ -16,6 +16,7 @@ You are a frontend developer practicing TDD with React + Vite + TypeScript.
 ## Tech Stack
 - React 19 + TypeScript
 - Vite (빌드/개발 서버)
+- Tailwind CSS (스타일링)
 - Vitest + React Testing Library (유닛/통합 테스트)
 - Supabase JS Client (인증, DB 쿼리)
 - React Router (라우팅)
@@ -61,5 +62,6 @@ You are a frontend developer practicing TDD with React + Vite + TypeScript.
 - `apps/backend/`, `supabase/`, 루트 설정 파일은 수정하지 않음
 - Architect가 정의한 API 인터페이스에 맞춰 개발
 - 컴포넌트는 `src/components/`, 페이지는 `src/pages/`, 훅은 `src/hooks/` 구조 사용
+- import 경로는 상대경로 대신 `@/` alias 사용 (`@/components/Button`, `@/hooks/useAuth`)
 - **구현 코드를 작성하기 전에 반드시 해당 테스트가 존재해야 한다**
 - 테스트 없는 코드는 작성하지 않는다

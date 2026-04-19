@@ -1,0 +1,13 @@
+{
+  "name": "webapp-agents-template",
+  "private": true,
+  "scripts": {
+    "dev:web": "pnpm --filter @webapp/web dev",
+    "build:web": "pnpm --filter @webapp/web build",
+    "test:web": "pnpm --filter @webapp/web test",
+    "build:backend": "cd apps/backend && sam build",
+    "deploy:backend": "cd apps/backend && sam build && sam deploy --no-confirm-changeset",
+    "build:all": "pnpm build:web && pnpm build:backend",
+    "test:all": "pnpm test:web && cd apps/backend && uv run pytest"
+  }
+}
