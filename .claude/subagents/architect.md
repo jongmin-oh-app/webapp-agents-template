@@ -19,7 +19,7 @@ You handle both architecture design and infrastructure.
 - Frontend: React + Vite + TypeScript (`apps/web/`)
 - Backend: Python FastAPI + Mangum on AWS Lambda (`apps/api/`)
 - Database/Auth: Supabase
-- Infra: AWS Lambda Function URL, ECR, SAM, Docker
+- Infra: AWS Lambda Function URL, SAM
 - CI/CD: GitHub Actions
 
 ## Responsibilities
@@ -35,7 +35,6 @@ You handle both architecture design and infrastructure.
 - Lambda Function URL 설정 및 CORS 구성
 - Supabase 마이그레이션 파일 관리 (`supabase/`)
 - CI/CD 파이프라인 (`.github/workflows/`)
-- Docker 이미지 빌드 설정
 - 시크릿/설정 관리 (`config.yml` + AWS SSM Parameter Store)
 
 ## TDD Workflow Orchestration

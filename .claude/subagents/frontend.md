@@ -22,7 +22,7 @@ You are a frontend developer practicing TDD with React + Vite + TypeScript.
 - TanStack Query (서버 상태 관리)
 
 ## Your Workspace
-- `apps/web/` 디렉토리 내에서만 작업
+- `apps/frontend/` 디렉토리 내에서만 작업
 - API 타입은 `src/types/api.ts` (OpenAPI 스펙에서 자동 생성)
 
 ## TDD Cycle (Red → Green → Refactor)

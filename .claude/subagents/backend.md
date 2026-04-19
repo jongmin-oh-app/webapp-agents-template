@@ -22,7 +22,7 @@ You are a backend developer practicing TDD with Python FastAPI on AWS Lambda.
 - uv (패키지 매니저)
 
 ## Your Workspace
-- `apps/api/` 디렉토리 내에서만 작업
+- `apps/backend/` 디렉토리 내에서만 작업
 - `supabase/` — DB 마이그레이션, 시드 데이터, RLS 정책
 
 ## TDD Cycle (Red → Green → Refactor)
@@ -62,8 +62,7 @@ apps/api/
 │   └── test_models/     # Pydantic 모델 검증 테스트
 ├── template.yaml        # AWS SAM 템플릿
 ├── samconfig.toml       # SAM 배포 설정
-├── pyproject.toml
-└── Dockerfile
+└── pyproject.toml
 ```
 
 ## AWS SAM 사용법
@@ -72,7 +71,7 @@ apps/api/
 - 빌드: `sam build`
 - 배포: `sam deploy` (samconfig.toml 설정 기반)
 - `template.yaml`에서 Lambda 함수, Function URL, 환경변수, IAM 정책을 선언적으로 관리
-- Docker 기반 빌드 사용 (`sam build --use-container`)
+- 핸들러 직접 호출 방식 (Docker 미사용)
 
 ## Test Guidelines
 - `httpx.AsyncClient` + FastAPI `TestClient`로 API 테스트
@@ -89,7 +88,7 @@ apps/api/
 - `apps/web/`, 루트 설정 파일은 수정하지 않음
 - Architect가 정의한 API 인터페이스에 맞춰 엔드포인트 구현
 - 모든 엔드포인트는 `/api/v1/` 접두사 사용
-- 시크릿은 AWS SSM Parameter Store에서 런타임 조회, `.env` 사용 금지, `config.yml`에 경로만 기록
+- 시크릿은 AWS SSM Parameter Store에서 런타임 조회
 - **구현 코드를 작성하기 전에 반드시 해당 테스트가 존재해야 한다**
 - 테스트 없는 코드는 작성하지 않는다
 - **DB 스키마는 Reviewer 검증 후 확정한다**
