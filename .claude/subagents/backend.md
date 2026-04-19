@@ -49,12 +49,12 @@ You are a backend developer practicing TDD with Python FastAPI on AWS Lambda.
 apps/api/
 ├── app/
 │   ├── main.py          # FastAPI app + Mangum handler
+│   ├── config.py        # AWS SSM Parameter Store에서 설정 로드
 │   ├── routers/         # API 라우터 모듈
 │   ├── models/          # Pydantic 모델
 │   ├── services/        # 비즈니스 로직
-│   └── core/
-│       ├── config.py    # 환경변수, 설정
-│       └── supabase.py  # Supabase 클라이언트
+│   └── connections/
+│       └── __init__.py  # 모든 외부 클라이언트 (Supabase 등)
 ├── tests/
 │   ├── conftest.py      # 공통 픽스처 (TestClient, mock Supabase)
 │   ├── test_routers/    # 엔드포인트 테스트
