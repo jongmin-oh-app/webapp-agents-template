@@ -46,7 +46,7 @@ You are a backend developer practicing TDD with Python FastAPI on AWS Lambda.
 
 ## Project Structure
 ```
-apps/api/
+apps/backend/
 ├── app/
 │   ├── main.py          # FastAPI app + Mangum handler
 │   ├── config.py        # AWS SSM Parameter Store에서 설정 로드

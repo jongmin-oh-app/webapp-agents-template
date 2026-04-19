@@ -1,0 +1,7 @@
+[default.deploy.parameters]
+stack_name = "webapp-api"
+resolve_s3 = true
+resolve_image_repos = true
+capabilities = "CAPABILITY_IAM"
+region = "ap-northeast-2"
+confirm_changeset = true

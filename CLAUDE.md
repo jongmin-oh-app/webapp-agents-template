@@ -16,7 +16,7 @@ webapp-agents-template/
 └── .github/workflows/    # CI/CD
 ```
 
-- `apps/web`과 `apps/api`는 완전히 독립된 프로젝트 (언어가 다르므로 코드 공유 없음)
+- `apps/web`과 `apps/backend`는 완전히 독립된 프로젝트 (언어가 다르므로 코드 공유 없음)
 - API 타입 공유: Backend Pydantic → OpenAPI 스펙 → `apps/web/src/types/api.ts` 자동 생성
 
 ## Tech Stack
@@ -52,7 +52,7 @@ Phase 4: 검증        Frontend/Backend → 리팩토링 (Refactor)
 ## Agent Team Roles
 - **Architect** (Opus): 설계 + 인프라 총괄 — API 스키마, AWS/Supabase 인프라, CI/CD, TDD 워크플로우 조율
 - **Frontend** (Sonnet): `apps/web/` — Vitest 테스트 선행 작성 → React 구현
-- **Backend** (Sonnet): `apps/api/` + `supabase/` — DB 설계 + pytest 테스트 선행 작성 → FastAPI 구현
+- **Backend** (Sonnet): `apps/backend/` + `supabase/` — DB 설계 + pytest 테스트 선행 작성 → FastAPI 구현
 - **Tester** (Sonnet): `apps/web/e2e/` — Playwright E2E 테스트 선행 작성 + 회귀 검증
 - **Reviewer** (Opus): 읽기 전용 — TDD 준수 검증 + 코드 품질/보안 리뷰
 

@@ -13,7 +13,7 @@ You are a senior code reviewer for a TDD-driven web application monorepo.
 
 ## Tech Stack
 - Frontend: React 19 + Vite + TypeScript + Vitest (`apps/web/`)
-- Backend: Python 3.12 + FastAPI + Mangum + pytest (`apps/api/`)
+- Backend: Python 3.12 + FastAPI + Mangum + pytest (`apps/backend/`)
 - Database/Auth: Supabase
 - E2E: Playwright (`apps/web/e2e/`)
 - Infra: AWS SAM/CDK, Docker, GitHub Actions

@@ -17,7 +17,7 @@ You handle both architecture design and infrastructure.
 ## Tech Stack
 - Monorepo: pnpm workspaces (root)
 - Frontend: React + Vite + TypeScript (`apps/web/`)
-- Backend: Python FastAPI + Mangum on AWS Lambda (`apps/api/`)
+- Backend: Python FastAPI + Mangum on AWS Lambda (`apps/backend/`)
 - Database/Auth: Supabase
 - Infra: AWS Lambda Function URL, SAM
 - CI/CD: GitHub Actions
@@ -62,7 +62,7 @@ You handle both architecture design and infrastructure.
 12. **Tester**가 E2E 테스트 최종 실행으로 전체 플로우 검증
 
 ## Rules
-- `apps/web/src/`, `apps/api/app/` 내부 비즈니스 로직은 직접 작성하지 않고 해당 담당 팀원에게 위임
+- `apps/web/src/`, `apps/backend/app/` 내부 비즈니스 로직은 직접 작성하지 않고 해당 담당 팀원에게 위임
 - API 인터페이스를 먼저 정의하고 팀원들에게 공유
 - DB 설계/마이그레이션은 Backend가 담당, `supabase/` 디렉토리에서 관리
 - 시크릿은 AWS SSM Parameter Store에서 관리, `.env` 파일 사용 금지, `config.yml`에 경로만 기록

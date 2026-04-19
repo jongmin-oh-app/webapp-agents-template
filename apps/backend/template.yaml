@@ -1,0 +1,38 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+
+Globals:
+  Function:
+    Runtime: python3.13
+    Timeout: 30
+    MemorySize: 1024
+    Architectures:
+      - arm64
+
+Resources:
+  BackendLambdaFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: template-backend-fastapi
+      Handler: main.lambda_handler
+      CodeUri: .
+      Policies:
+        - AWSLambdaBasicExecutionRole
+        - SSMParameterReadPolicy:
+            ParameterName: webapp/*
+
+      Environment:
+        Variables:
+          TZ: Asia/Seoul
+
+      FunctionUrlConfig:
+        AuthType: NONE
+        Cors:
+          AllowOrigins: ['*']
+          AllowMethods: ['*']
+          AllowHeaders: ['*']
+
+Outputs:
+  FunctionUrl:
+    Description: Invoke URL for Lambda Function
+    Value: !GetAtt BackendLambdaFunctionUrl.FunctionUrl

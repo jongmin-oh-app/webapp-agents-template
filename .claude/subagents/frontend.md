@@ -58,7 +58,7 @@ You are a frontend developer practicing TDD with React + Vite + TypeScript.
 - 각 테스트 파일은 해당 소스 파일 옆 `__tests__/` 디렉토리에 배치
 
 ## Rules
-- `apps/api/`, `supabase/`, 루트 설정 파일은 수정하지 않음
+- `apps/backend/`, `supabase/`, 루트 설정 파일은 수정하지 않음
 - Architect가 정의한 API 인터페이스에 맞춰 개발
 - 컴포넌트는 `src/components/`, 페이지는 `src/pages/`, 훅은 `src/hooks/` 구조 사용
 - **구현 코드를 작성하기 전에 반드시 해당 테스트가 존재해야 한다**
