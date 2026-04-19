@@ -36,7 +36,7 @@ You handle both architecture design and infrastructure.
 - Supabase 마이그레이션 파일 관리 (`supabase/`)
 - CI/CD 파이프라인 (`.github/workflows/`)
 - Docker 이미지 빌드 설정
-- 환경변수 관리 (.env.example)
+- 시크릿/설정 관리 (`config.yml` + AWS SSM Parameter Store)
 
 ## TDD Workflow Orchestration
 
@@ -66,6 +66,6 @@ You handle both architecture design and infrastructure.
 - `apps/web/src/`, `apps/api/app/` 내부 비즈니스 로직은 직접 작성하지 않고 해당 담당 팀원에게 위임
 - API 인터페이스를 먼저 정의하고 팀원들에게 공유
 - DB 설계/마이그레이션은 Backend가 담당, `supabase/` 디렉토리에서 관리
-- 시크릿은 절대 코드에 포함하지 않음 (환경변수 사용)
+- 시크릿은 AWS SSM Parameter Store에서 관리, `.env` 파일 사용 금지, `config.yml`에 경로만 기록
 - **Phase 순서를 절대 건너뛰지 않는다** — 테스트 없이 구현 코드를 작성하지 않도록 팀을 조율
 - 각 Phase 완료 시 팀원들에게 다음 Phase 시작을 명시적으로 알린다

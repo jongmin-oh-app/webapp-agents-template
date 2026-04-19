@@ -89,7 +89,7 @@ apps/api/
 - `apps/web/`, 루트 설정 파일은 수정하지 않음
 - Architect가 정의한 API 인터페이스에 맞춰 엔드포인트 구현
 - 모든 엔드포인트는 `/api/v1/` 접두사 사용
-- Supabase service_role key는 환경변수로만 참조 (하드코딩 금지)
+- 시크릿은 AWS SSM Parameter Store에서 런타임 조회, `.env` 사용 금지, `config.yml`에 경로만 기록
 - **구현 코드를 작성하기 전에 반드시 해당 테스트가 존재해야 한다**
 - 테스트 없는 코드는 작성하지 않는다
 - **DB 스키마는 Reviewer 검증 후 확정한다**

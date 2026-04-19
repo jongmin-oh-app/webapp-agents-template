@@ -58,11 +58,29 @@ Phase 4: 검증        Frontend/Backend → 리팩토링 (Refactor)
 
 ## Conventions
 - API 엔드포인트: `/api/v1/` 접두사
-- 환경변수: `.env.example`에 키 목록 관리, 시크릿은 코드에 포함 금지
 - Supabase 스키마 변경: 반드시 마이그레이션 파일로 관리
 - Frontend에서 Backend 호출: Lambda Function URL 직접 호출
 - **테스트 없는 구현 코드 작성 금지**
 - Frontend 컴포넌트: 반드시 `data-testid` 속성 부여
+
+## Secrets & Config 관리
+- 시크릿은 **AWS Systems Manager Parameter Store**에서 일원 관리
+- `.env` 파일 사용 금지 — 설정은 `config.yml`로 관리
+- `config.yml`에는 시크릿 값이 아닌 **Parameter Store 경로**만 기록
+- 시크릿은 코드에 절대 포함하지 않는다
+
+```yaml
+# config.yml 예시
+app:
+  name: webapp
+  stage: dev
+
+params:
+  supabase_url: /webapp/dev/supabase-url
+  supabase_anon_key: /webapp/dev/supabase-anon-key
+  supabase_service_role_key: /webapp/dev/supabase-service-role-key
+  lambda_function_url: /webapp/dev/lambda-function-url
+```
 
 ## Code Conventions (모든 에이전트 필수 준수)
 
